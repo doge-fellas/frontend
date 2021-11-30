@@ -81,7 +81,7 @@
     max-height: 300px;
   }
   .openAnimOn {
-    animation: openAnim 0.5s forwards ease-out;
+    animation: openAnim 0.3s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   .burger.open {
     display: flex;
