@@ -5,7 +5,7 @@ const Navbar: React.FC = React.memo(() => {
   const [isBurgerOpened, setIsBurgerOpened] = useState<boolean>(false);
 
   return (
-    <nav className={s.nav}>
+    <nav className={`${s.nav} ${isBurgerOpened ? s.open : ''}`}>
       <ul className={`${s.nav__items} `}>
         <div className={s.nav__permanent}>
           <li className={s.nav__item}>HOME</li>
@@ -19,7 +19,11 @@ const Navbar: React.FC = React.memo(() => {
           </button>
         </div>
 
-        <div className={`${s.burger} ${isBurgerOpened && s.open}`}>
+        <div
+          className={`${s.burger} ${isBurgerOpened ? s.open : ''}  ${
+            isBurgerOpened ? s.openAnimOn : ''
+          }`}
+        >
           <li className={s.burger__item}>MARKETPLACE</li>
           <li className={s.burger__item}>FARMING</li>
           <li className={s.burger__item}>SHAKEDOWN</li>
