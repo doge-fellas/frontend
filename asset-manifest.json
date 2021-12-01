@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/doge-fellas/frontend/static/css/main.7fb67973.chunk.css",
+    "main.js": "/doge-fellas/frontend/static/js/main.3bf4a373.chunk.js",
+    "main.js.map": "/doge-fellas/frontend/static/js/main.3bf4a373.chunk.js.map",
+    "runtime-main.js": "/doge-fellas/frontend/static/js/runtime-main.e65ab8b7.js",
+    "runtime-main.js.map": "/doge-fellas/frontend/static/js/runtime-main.e65ab8b7.js.map",
+    "static/js/2.b7234fae.chunk.js": "/doge-fellas/frontend/static/js/2.b7234fae.chunk.js",
+    "static/js/2.b7234fae.chunk.js.map": "/doge-fellas/frontend/static/js/2.b7234fae.chunk.js.map",
+    "static/js/3.3c653426.chunk.js": "/doge-fellas/frontend/static/js/3.3c653426.chunk.js",
+    "static/js/3.3c653426.chunk.js.map": "/doge-fellas/frontend/static/js/3.3c653426.chunk.js.map",
+    "index.html": "/doge-fellas/frontend/index.html",
+    "static/css/main.7fb67973.chunk.css.map": "/doge-fellas/frontend/static/css/main.7fb67973.chunk.css.map",
+    "static/js/2.b7234fae.chunk.js.LICENSE.txt": "/doge-fellas/frontend/static/js/2.b7234fae.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/doge-fellas/frontend/static/media/background.5cfb086d.jpg",
+    "static/media/bottom_image.69c47b02.png": "/doge-fellas/frontend/static/media/bottom_image.69c47b02.png",
+    "static/media/logo.60b25b54.png": "/doge-fellas/frontend/static/media/logo.60b25b54.png",
+    "static/media/mint.4fc22bb5.png": "/doge-fellas/frontend/static/media/mint.4fc22bb5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e65ab8b7.js",
+    "static/js/2.b7234fae.chunk.js",
+    "static/css/main.7fb67973.chunk.css",
+    "static/js/main.3bf4a373.chunk.js"
+  ]
+}
