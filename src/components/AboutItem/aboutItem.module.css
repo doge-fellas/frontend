@@ -11,9 +11,15 @@
   color: #f4aa28;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1440 - 320)));
+  font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1440 - 320)));
 }
 
 .item__content {
-  font-weight: 500;
+  font-weight: 100;
+  font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1440 - 320)));
+}
+@media screen and (max-width: 1024px) {
+  .about__item {
+    width: 100%;
+  }
 }

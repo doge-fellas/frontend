@@ -4,6 +4,9 @@
   padding: 15px 5px;
   max-height: calc(30px + (40 - 30) * ((100vw - 320px) / (1440 - 320)));
   transition: max-height 0.5s ease-out;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
 }
 .nav__items {
   margin: 0 5% 0 5%;
