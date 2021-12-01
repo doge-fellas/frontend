@@ -1,0 +1,36 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 5px solid #fefefe;
+  justify-content: space-between;
+  gap: 50px;
+  height: calc(400px + (500 - 400) * ((100vw - 320px) / (1440 - 320)));
+}
+.block img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.button {
+  animation: mintNow infinite 0.5s ease alternate;
+}
+@keyframes mintNow {
+  0% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .block {
+    border: none;
+    padding: 0;
+    gap: 20px;
+  }
+  .block img {
+    width: 100%;
+  }
+}
