@@ -1,0 +1,20 @@
+.countdown {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+  font-weight: bold;
+}
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.item__value {
+  color: black;
+  background-color: #fefefe;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+}

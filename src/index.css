@@ -10,6 +10,9 @@ html {
   background-size: cover;
   background-attachment: scroll;
   height: 100%;
+  font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1440 - 320)));
+  color: #fefefe;
+  overflow-x: hidden;
 }
 
 code {

@@ -2,8 +2,8 @@
   background-color: #0d1e289d;
   color: white;
   padding: 15px 5px;
-  max-height: 60px;
-  transition: max-height 0.5s ease;
+  max-height: calc(30px + (40 - 30) * ((100vw - 320px) / (1440 - 320)));
+  transition: max-height 0.5s ease-out;
 }
 .nav__items {
   margin: 0 5% 0 5%;
@@ -15,7 +15,6 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
-  font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1440 - 320)));
 }
 
 .nav__permanent {
@@ -81,7 +80,7 @@
     max-height: 300px;
   }
   .openAnimOn {
-    animation: openAnim 0.3s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: openAnim 0.5s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   .burger.open {
     display: flex;

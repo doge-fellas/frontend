@@ -1,0 +1,15 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.block__logo {
+  width: 100%;
+}
+
+.block__title {
+  color: #fefefe;
+}

@@ -8,7 +8,7 @@ interface IPropTypes {
 
 const Button: React.FC<IPropTypes> = React.memo(({ children, ...props }) => {
   return (
-    <button className={s.button} {...props}>
+    <button {...props} className={`${s.button} ${props.className}`}>
       {children}
     </button>
   );

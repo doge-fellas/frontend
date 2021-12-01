@@ -1,0 +1,22 @@
+.app {
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+.top__content {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .top__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+}

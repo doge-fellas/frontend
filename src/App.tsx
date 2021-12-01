@@ -1,14 +1,18 @@
 import React from 'react';
-import './App.css';
+import s from './app.module.css';
 import ConnectWalletSide from './components/ConnectWalletSide/ConnectWalletSide';
-import Navbar from './components/navbar/Navbar';
+import MintNowSide from './components/MintNowSide/MintNowSide';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className={s.app}>
       <Navbar />
-      <main>
-        <ConnectWalletSide />
+      <main className={s.main}>
+        <div className={s.top__content}>
+          <ConnectWalletSide />
+          <MintNowSide />
+        </div>
       </main>
     </div>
   );
