@@ -1,15 +1,38 @@
-.app {
+:root {
+  --gap: calc(100px + (200 - 100) * ((100vw - 320px) / (1440 - 320)));
 }
 
 .main {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 .top__content {
+  margin-top: 100px;
   display: flex;
   height: 100%;
   justify-content: space-around;
   align-items: flex-end;
+}
+.bottom_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1440 - 320)));
+  gap: 30px;
+  margin-bottom: var(--gap);
+}
+.footer__image {
+  width: calc(300px + (450 - 300) * ((100vw - 320px) / (1440 - 320)));
 }
 
 @media screen and (max-width: 900px) {

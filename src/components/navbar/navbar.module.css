@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 500;
+  font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1440 - 320)));
 }
 
 .nav__permanent {
@@ -29,6 +30,7 @@
   align-items: center;
   cursor: pointer;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .nav__item:last-child {
@@ -87,6 +89,10 @@
   }
   .nav__item:last-child {
     display: block;
+  }
+  .nav__item:first-child {
+    font-size: 20px;
+    align-self: center;
   }
   .nav__permanent {
     width: 100%;

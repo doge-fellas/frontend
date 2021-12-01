@@ -6,7 +6,7 @@ const Navbar: React.FC = React.memo(() => {
 
   return (
     <nav className={`${s.nav} ${isBurgerOpened ? s.open : ''}`}>
-      <ul className={`${s.nav__items} `}>
+      <ul className={`${s.nav__items}`}>
         <div className={s.nav__permanent}>
           <li className={s.nav__item}>HOME</li>
           <button
