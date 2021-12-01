@@ -8,13 +8,12 @@
 .countdown__item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   align-items: center;
 }
 .item__value {
   color: black;
   background-color: #fefefe;
-
   padding: 10px 20px;
   border-radius: 5px;
 }
