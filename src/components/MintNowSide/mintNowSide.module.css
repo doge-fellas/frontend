@@ -14,6 +14,9 @@
 
 .button {
   animation: mintNow infinite 0.5s ease alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @keyframes mintNow {
   0% {

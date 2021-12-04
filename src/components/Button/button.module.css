@@ -1,5 +1,4 @@
 .button {
-  position: relative;
   background-color: #4c2500;
   border: 2px solid #fefefe;
   text-transform: uppercase;
@@ -8,6 +7,9 @@
   font-weight: 500;
   font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1440 - 320)));
   transition: all 0.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .button:hover {

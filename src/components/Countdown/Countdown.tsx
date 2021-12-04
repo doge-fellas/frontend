@@ -9,23 +9,27 @@ type ITime = {
 } | null;
 
 const Countdown: React.FC = React.memo(() => {
-  const [countDownDate, setCountDownDate] = useState(
+  const [countDownDate] = useState(
     new Date('January 1, 2022 00:00:00').getTime(),
   );
+
   const [time, setTime] = useState<ITime>();
+
+  const handleSetTime = (countDownDate: number) => {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
+    setTime({
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((distance % (1000 * 60)) / 1000),
+    });
+  };
+
   useEffect(() => {
+    handleSetTime(countDownDate);
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-      if (distance < 0) clearInterval(timer);
-      setTime({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        ),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      handleSetTime(countDownDate);
     }, 1000);
     return () => {
       clearInterval(timer);

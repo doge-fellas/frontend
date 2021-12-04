@@ -1,7 +1,7 @@
 .block {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -12,4 +12,8 @@
 
 .block__title {
   color: #fefefe;
+}
+
+.block__button {
+  width: calc(200px + (300 - 200) * ((100vw - 320px) / (1440 - 320)));
 }
