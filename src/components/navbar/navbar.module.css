@@ -7,6 +7,7 @@
   width: 100%;
   position: fixed;
   z-index: 10;
+  top: 0;
 }
 .nav__items {
   margin: 0 5% 0 5%;
@@ -76,7 +77,16 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.logo {
+  position: absolute;
+  width: calc(150px + (160 - 150) * ((100vw - 320px) / (1440 - 320)));
+  top: 0;
+}
+
 @media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
   .burger {
     flex-direction: column;
     display: none;

@@ -8,7 +8,9 @@ const Navbar: React.FC = React.memo(() => {
     <nav className={`${s.nav} ${isBurgerOpened ? s.open : ''}`}>
       <ul className={`${s.nav__items}`}>
         <div className={s.nav__permanent}>
-          <li className={s.nav__item}>HOME</li>
+          <li className={s.nav__item}>
+            HOME
+          </li>
           <button
             onClick={() => setIsBurgerOpened(!isBurgerOpened)}
             className={`${s.nav__item} ${s.menu_toggle} ${

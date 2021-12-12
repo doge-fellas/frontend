@@ -2,26 +2,32 @@
   --gap: calc(100px + (200 - 100) * ((100vw - 320px) / (1440 - 320)));
 }
 
+
 .main {
-  width: 80%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
-.top__content {
-  margin-top: calc(80px + (140 - 80) * ((100vw - 320px) / (1440 - 320)));
+
+.content {
+  margin: calc(60px + (120 - 60) * ((100vw - 320px) / (1440 - 320))) auto;
+  width: 80%;
   display: flex;
-  height: 100%;
+}
+
+.top__content {
+  display: flex;
   justify-content: space-around;
   align-items: flex-end;
 }
+
 .bottom_content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
 }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -31,6 +37,7 @@
   gap: 30px;
   margin-bottom: var(--gap);
 }
+
 .footer__image {
   width: calc(280px + (500 - 280) * ((100vw - 320px) / (1440 - 320)));
 }
@@ -43,6 +50,7 @@
     gap: 50px;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .bottom_content {
     flex-direction: column;
