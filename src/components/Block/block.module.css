@@ -2,7 +2,6 @@
   position: relative;
   border-radius: 15px;
   background-color: #172C37;
-  width: 100%;
-  padding: 15px;
+  padding: 20px 15px;
   box-shadow: 0 0 10px 3px rgba(49, 206, 255, 0.1);
 }

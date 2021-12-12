@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import s from './navbar.module.css';
 
 const Navbar: React.FC = React.memo(() => {
@@ -9,7 +10,7 @@ const Navbar: React.FC = React.memo(() => {
       <ul className={`${s.nav__items}`}>
         <div className={s.nav__permanent}>
           <li className={s.nav__item}>
-            HOME
+            <Link to={'/'}> HOME </Link>
           </li>
           <button
             onClick={() => setIsBurgerOpened(!isBurgerOpened)}
@@ -27,7 +28,10 @@ const Navbar: React.FC = React.memo(() => {
           }`}
         >
           <li className={s.burger__item}>MARKETPLACE</li>
-          <li className={s.burger__item}>FARMING</li>
+          <li className={s.burger__item}>
+            {' '}
+            <Link to={'/presale'}>PRESALE</Link>{' '}
+          </li>
           <li className={s.burger__item}>SHAKEDOWN</li>
           <li className={s.burger__item}>BUY $FELLAS</li>
         </div>

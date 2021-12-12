@@ -1,0 +1,17 @@
+.contributor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1440 - 320)));
+}
+.contributor__name {
+  flex-grow: 1;
+}
+.contributor__value {
+  color: #fcd755;
+  font-weight: bold;
+}
+.contributor__date {
+  font-style: italic;
+}

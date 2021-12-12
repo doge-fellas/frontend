@@ -1,61 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import s from './countdown.module.css';
+import { useCountDown } from '../../hooks/useCoutDown';
 
-type ITime = {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-} | null;
+interface IProps {
+  countDownDateProp?: Date;
+  className?: any;
+  showExtra?: boolean;
+  [key: string]: any;
+}
 
-const Countdown: React.FC = React.memo(() => {
-  const [countDownDate] = useState(
-    new Date('January 1, 2022 00:00:00').getTime(),
-  );
+const Countdown: React.FC<IProps> = React.memo(
+  ({ showExtra = true, className, countDownDateProp, ...props }) => {
+    const time = useCountDown(countDownDateProp);
 
-  const [time, setTime] = useState<ITime>();
-
-  const handleSetTime = (countDownDate: number) => {
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-    setTime({
-      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((distance % (1000 * 60)) / 1000),
-    });
-  };
-
-  useEffect(() => {
-    handleSetTime(countDownDate);
-    const timer = setInterval(() => {
-      handleSetTime(countDownDate);
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, [countDownDate]);
-
-  return (
-    <div className={s.countdown}>
-      <div className={s.countdown__item}>
-        <div className={s.item__value}>{time?.days || 0}</div>
-        <small className={s.countdown__small}>DAYS</small>
+    return (
+      <div {...props} className={`${s.countdown} ${className}`}>
+        <div className={s.countdown__item}>
+          <div className={s.item__value}>{time?.days || 0}</div>
+          {showExtra && <small className={s.countdown__small}>DAYS</small>}
+        </div>
+        <div className={s.countdown__item}>
+          <div className={s.item__value}>{time?.hours || 0}</div>
+          {showExtra && <small className={s.countdown__small}>HOURS</small>}
+        </div>
+        <div className={s.countdown__item}>
+          <div className={s.item__value}>{time?.minutes || 0}</div>
+          {showExtra && <small className={s.countdown__small}>MINUTES</small>}
+        </div>
+        <div className={s.countdown__item}>
+          <div className={s.item__value}>{time?.seconds || 0}</div>
+          {showExtra && <small className={s.countdown__small}>SECONDS</small>}
+        </div>
       </div>
-      <div className={s.countdown__item}>
-        <div className={s.item__value}>{time?.hours || 0}</div>
-        <small className={s.countdown__small}>HOURS</small>
-      </div>
-      <div className={s.countdown__item}>
-        <div className={s.item__value}>{time?.minutes || 0}</div>
-        <small className={s.countdown__small}>MINUTES</small>
-      </div>
-      <div className={s.countdown__item}>
-        <div className={s.item__value}>{time?.seconds || 0}</div>
-        <small className={s.countdown__small}>SECONDS</small>
-      </div>
-    </div>
-  );
-});
+    );
+  },
+);
 
 export default Countdown;
