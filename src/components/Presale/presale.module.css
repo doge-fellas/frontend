@@ -40,7 +40,7 @@
 
 .progress {
   position: relative;
-  width: 38%;
+  width: 0;
   border-radius: 15px;
   background-color: #fcd755;
   height: 10px;

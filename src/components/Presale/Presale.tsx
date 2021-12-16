@@ -6,9 +6,8 @@ import { useWeb3 } from '../../hooks/useWeb3';
 import Contributor from './Contributor/Contributor';
 
 const Presale: React.FC = () => {
-  const [init, currentAccount, balance] = useWeb3();
+  const [init, currentAccount, balance, goalProgress, nftContract] = useWeb3();
   const [input, setInput] = useState('0');
-
   return (
     <div className={s.content}>
       <Block className={s.info}>
@@ -20,11 +19,14 @@ const Presale: React.FC = () => {
       <Block className={s.status}>
         <div className={s.status__content}>
           <div className={s.progress_bar}>
-            <div className={s.progress} />
+            <div
+              className={s.progress}
+              style={{ width: `${(goalProgress / 1000) * 100}%` }}
+            />
           </div>
           <div className={s.values}>
-            <small>0 BNB</small>
-            <small>1000 BNB</small>
+            <small>0 WEI</small>
+            <small>1000 WEI</small>
           </div>
         </div>
       </Block>
@@ -33,7 +35,7 @@ const Presale: React.FC = () => {
         {currentAccount ? (
           <div className={s.wallet}>
             <h2 className={s.balance}>
-              Connected Balance: {balance ? `${balance} BNB` : 'Loading...'}
+              Connected Balance: {balance ? `${balance} WEI` : 'Loading...'}
             </h2>
             <div className={s.wallet__input_wrapper}>
               <input
@@ -62,12 +64,12 @@ const Presale: React.FC = () => {
         )}
       </Block>
       <h2 className={s.title}>Last Contributions</h2>
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
-      <Contributor name={'heea.1243'} amount={'42 BNB'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
+      <Contributor name={'heea.1243'} amount={'42 WEI'} date={'1 month ago'} />
     </div>
   );
 };

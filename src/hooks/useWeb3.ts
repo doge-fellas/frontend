@@ -4,7 +4,9 @@ import ABI from '../web3/ABI.json';
 
 export const useWeb3: any = () => {
   const [currentAccount, setCurrentAccount] = useState(null);
+  const [nftContract, setNftContract] = useState<any>(null);
   const [balance, setCurrentBalance] = useState(null);
+  const [goalProgress, setGoalProgress] = useState<any>(null);
 
   let accounts: any;
   const provider = (window as any).ethereum;
@@ -19,15 +21,20 @@ export const useWeb3: any = () => {
       });
     }
     const web3 = new Web3(provider);
-    await setCurrentBalance(
-      accounts[0] && (await web3.eth.getBalance(accounts[0])),
-    );
-
-    const nftContract = new web3.eth.Contract(
+    const _nftContract = new web3.eth.Contract(
       ABI as any,
       process.env.REACT_APP_CONTRACT_ADDRESS,
     );
+
+    await setCurrentBalance(
+      accounts[0] && (await web3.eth.getBalance(accounts[0])),
+    );
+    await setGoalProgress(
+      await web3.eth.getBalance(_nftContract.options.address),
+    );
+
+    return setNftContract(_nftContract);
   }, [provider, setCurrentAccount, setCurrentBalance]);
 
-  return [init, currentAccount, balance];
+  return [init, currentAccount, balance, nftContract, goalProgress];
 };
