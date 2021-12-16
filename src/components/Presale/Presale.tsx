@@ -6,8 +6,23 @@ import { useWeb3 } from '../../hooks/useWeb3';
 import Contributor from './Contributor/Contributor';
 
 const Presale: React.FC = () => {
-  const [init, currentAccount, balance, goalProgress, nftContract] = useWeb3();
+  const { init, currentAccount, balance, goalProgress, nftContract, web3 } =
+    useWeb3();
   const [input, setInput] = useState('0');
+
+  const sendMoney = async (value: number) => {
+    await nftContract.methods
+      .safeTransferFrom(
+        currentAccount,
+        nftContract.options.address,
+        web3?.utils?.toWei(`${value}`, 'ether'),
+      )
+      .call({
+        from: currentAccount,
+        value: web3?.utils?.toWei(`${value}`, 'ether'),
+        gasLimit: 3000000000,
+      });
+  };
   return (
     <div className={s.content}>
       <Block className={s.info}>
@@ -55,7 +70,14 @@ const Presale: React.FC = () => {
               </span>
             </div>
 
-            <button className={s.connect_wallet__button}>Contribute</button>
+            <button
+              className={s.connect_wallet__button}
+              onClick={async () => {
+                await sendMoney(+input);
+              }}
+            >
+              Contribute
+            </button>
           </div>
         ) : (
           <button onClick={() => init()} className={s.connect_wallet__button}>

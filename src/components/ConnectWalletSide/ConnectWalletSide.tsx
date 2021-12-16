@@ -6,7 +6,7 @@ import logo from '../../utilities/images/logo.png';
 import { useWeb3 } from '../../hooks/useWeb3';
 
 const ConnectWalletSide: React.FC = React.memo(() => {
-  const [init, currentAccount] = useWeb3();
+  const { init, currentAccount } = useWeb3();
 
   const handleConnectWallet = async () => {
     await init();
