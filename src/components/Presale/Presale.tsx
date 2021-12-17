@@ -9,18 +9,19 @@ const Presale: React.FC = () => {
   const { init, currentAccount, balance, goalProgress, nftContract, web3 } =
     useWeb3();
   const [input, setInput] = useState('0');
+  console.log(nftContract?.options?.address);
 
   const sendMoney = async (value: number) => {
     await nftContract.methods
       .safeTransferFrom(
         currentAccount,
         nftContract.options.address,
-        web3?.utils?.toWei(`${value}`, 'ether'),
+        web3.utils.toWei(`${value}`, 'ether'),
       )
-      .call({
+      .send({
         from: currentAccount,
-        value: web3?.utils?.toWei(`${value}`, 'ether'),
-        gasLimit: 3000000000,
+        value: web3.utils.toWei(`${value}`, 'ether'),
+        gasLimit: 28000,
       });
   };
   return (
@@ -36,7 +37,9 @@ const Presale: React.FC = () => {
           <div className={s.progress_bar}>
             <div
               className={s.progress}
-              style={{ width: `${(goalProgress / 1000) * 100}%` }}
+              style={{
+                width: `${(goalProgress / 1000000000000000000) * 100}%`,
+              }}
             />
           </div>
           <div className={s.values}>
